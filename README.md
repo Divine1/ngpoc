@@ -47,5 +47,9 @@ https://web.dev/add-manifest/
 
 https://angular.io/guide/app-shell
 
+ng g app-shell --route=dw-shell-path
 
+
+
+ng run darkwhiteapp:app-shell
 
