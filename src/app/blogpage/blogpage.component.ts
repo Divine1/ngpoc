@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { tap } from 'rxjs/operators';
 import { BlogService } from '../blog.service';
-
+import {IJoke} from './../interfaces/IJoke';
 @Component({
   selector: 'app-blogpage',
   templateUrl: './blogpage.component.html',
@@ -17,11 +17,11 @@ export class BlogpageComponent implements OnInit {
   getPosts(){
     this.blogService.getPosts().pipe(
       tap({
-        next :(item)=>{
+        next :(item:IJoke[])=>{
           console.log("component tap item ",item)
         }
       })
-    ).subscribe((resdata:any)=>{
+    ).subscribe((resdata:IJoke[])=>{
       console.log("resdata ",resdata)
     })
   }

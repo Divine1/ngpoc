@@ -25,3 +25,27 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+
+
+ng add @angular/pwa
+
+ng build --prod
+
+ng server --prod
+
+npm i -g http-server
+http-server -p 8081
+
+http-server -p 8080 -c-1 dist/darkwhiteapp
+
+
+https://stackoverflow.com/a/56128412/3673073
+
+https://web.dev/add-manifest/
+
+https://angular.io/guide/app-shell
+
+
+

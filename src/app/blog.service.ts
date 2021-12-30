@@ -3,38 +3,27 @@ import {HttpClient} from '@angular/common/http';
 
 import { map, shareReplay, tap } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
+import {IJoke} from './interfaces/IJoke';
 
 
-interface Joke{
-  userId : string;
-  id: string;
-  title : string;
-  body :string;
-
-}
 
 @Injectable({
   providedIn: 'root'
 })
 export class BlogService {
 
-
   postsurl = "https://jsonplaceholder.typicode.com/posts"
-
-  posts$:Observable<Joke[]>;
+  posts$:Observable<IJoke[]>;
 
   constructor(private httpClient : HttpClient) { 
 
-    this.posts$ = this.httpClient.get<Joke[]>(this.postsurl).pipe(
-        map(item => {
-
+    this.posts$ = this.httpClient.get<IJoke[]>(this.postsurl).pipe(
+        map((item : IJoke[]) => {
           console.log("map item ",item)
           return item;
         }),
-        
         shareReplay(1)
       )
-    
   }
 
   getPosts(){
